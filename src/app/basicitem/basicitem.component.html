@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Item List</h3>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of items">
+      <div class="ibox">
+        <div class="ibox-content product-box">
+          <div class="product-imitation">
+            <img class="img-thumbnail" src="{{ item.photo }}"  onerror="this.src='https://sierranorte.cnt.es/wp-content/uploads/no_preview.jpg'"/>
+          </div>
+          <div class="product-desc">
+            <span class="product-stock" *ngIf="item.stock>0"> Stock: {{ item.stock }} </span>
+            <span class="product-nostock" *ngIf="item.stock==0"> Out of Stock </span>
+            <!-- <small class="text-muted">Category</small> -->
+            <a href="#" class="product-name"> {{ item.name }}</a>
+
+            <div class="small m-t-xs">
+              {{ item.description }}
+            </div>
+            <!-- <div class="m-t text-righ">
+
+                        <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                    </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
